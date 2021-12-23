@@ -2,16 +2,26 @@
 % Please edit documentation in R/reshaping.R
 \name{CT_to_wide}
 \alias{CT_to_wide}
-\title{Title}
+\title{Reshapes a correspondence table from long to wide format.
+Wrapper around \code{data.table::dcast}}
 \usage{
 CT_to_wide(x, source = 1, target = 2, value = 3, return = "data.table")
 }
 \arguments{
+\item{x}{a correspondence table in long format. Must have at least 3 columns: source and target classification, and mapping infromation (numeric/boolean)}
+
+\item{source}{location (numeric) or name (character) of column of source classification}
+
+\item{target}{location (numeric) or name (character) of column of target classification}
+
+\item{value}{location (numeric) or name (character) of value column}
+
 \item{return}{}
 }
 \value{
 
 }
 \description{
-Title
+Reshapes a correspondence table from long to wide format.
+Wrapper around \code{data.table::dcast}
 }

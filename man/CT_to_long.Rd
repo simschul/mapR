@@ -2,7 +2,8 @@
 % Please edit documentation in R/reshaping.R
 \name{CT_to_long}
 \alias{CT_to_long}
-\title{Title}
+\title{Reshapes correspondence table from wide to long format.
+Wrapper around \code{data.table::melt}}
 \usage{
 CT_to_long(
   x,
@@ -12,11 +13,18 @@ CT_to_long(
 )
 }
 \arguments{
-\item{sort_by}{}
+\item{x}{a CT in wide format. Either matrix with rownames (source classification) and column names (target classfication), or data.table with the source classifaction as the first column}
+
+\item{source_name}{name of the source classication. Defaults to 'source' (if x is matrix), or the name of the first column (if x is data.table)}
+
+\item{target_name}{name of the target classifaction. Defaults to 'target'}
+
+\item{sort_by}{either 'source' (default) or 'target'}
 }
 \value{
-
+a CT in long format (=data.table with 3 columns: source and target classification, and mapping infromation (numeric/boolean))
 }
 \description{
-Title
+Reshapes correspondence table from wide to long format.
+Wrapper around \code{data.table::melt}
 }
